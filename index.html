@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#211329"><title>Costume Chaos · Genially</title>
+<style>
+*{box-sizing:border-box}html,body{width:100%;height:100%;margin:0;overflow:hidden;background:#211329}#stage{position:absolute;left:50%;top:50%;width:1440px;height:1000px;transform-origin:center;visibility:hidden}iframe{display:block;width:1440px;height:1000px;border:0;background:#211329}#loading{position:absolute;inset:0;display:grid;place-content:center;color:#e6c593;font:16px Georgia,serif}#loading[hidden]{display:none}@media(prefers-reduced-motion:no-preference){#loading{animation:pulse 1.8s ease-in-out infinite}@keyframes pulse{50%{opacity:.5}}}
+</style></head><body><div id="loading" role="status">Opening Mavis’s atelier…</div><div id="stage"><iframe id="game" title="Mavis’s Costume Chaos" src="./game.html" width="1440" height="1000" allow="autoplay; fullscreen" allowfullscreen scrolling="no"></iframe></div>
+<script>
+const stage=document.getElementById('stage'),frame=document.getElementById('game');
+function fit(){const scale=Math.min(document.documentElement.clientWidth/1440,document.documentElement.clientHeight/1000);stage.style.transform='translate(-50%,-50%) scale('+scale+')'}
+fit();window.addEventListener('resize',fit);if(window.visualViewport)window.visualViewport.addEventListener('resize',fit);
+frame.addEventListener('load',()=>{fit();stage.style.visibility='visible';document.getElementById('loading').hidden=true});
+</script></body></html>
