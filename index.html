@@ -5,7 +5,7 @@
 </style></head><body><div id="loading" role="status">Opening Mavis’s atelier…</div><div id="stage"><iframe id="game" title="Mavis’s Costume Chaos" src="./game.html" width="1440" height="1000" allow="autoplay; fullscreen" allowfullscreen scrolling="no"></iframe></div>
 <script>
 const stage=document.getElementById('stage'),frame=document.getElementById('game');
-function fit(){const scale=Math.min(document.documentElement.clientWidth/1440,document.documentElement.clientHeight/1000);stage.style.transform='translate(-50%,-50%) scale('+scale+')'}
+function fit(){const w=document.documentElement.clientWidth,h=document.documentElement.clientHeight;if(!w||!h)return;const scale=Math.min(w/1440,h/1000),sceneWidth=w/scale,sceneHeight=h/scale;stage.style.width=frame.style.width=sceneWidth+'px';stage.style.height=frame.style.height=sceneHeight+'px';stage.style.transform='translate(-50%,-50%) scale('+scale+')'}
 fit();window.addEventListener('resize',fit);if(window.visualViewport)window.visualViewport.addEventListener('resize',fit);
 frame.addEventListener('load',()=>{fit();stage.style.visibility='visible';document.getElementById('loading').hidden=true});
 </script></body></html>
